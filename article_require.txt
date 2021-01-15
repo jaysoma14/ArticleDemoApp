@@ -1,0 +1,30 @@
+2.
+
+Need to create Project for article posting. where user should be able to register and logic and create topic. and can create artical and with selected topic
+and user can follow and unfollow other user. can get articles of the following users and recent article and user can comment on article.
+
+APIS- register user
+      login user
+      create topic - auth
+      get all topics
+      create article - auth
+      edit article - auth
+      delete article - auth
+      get all articles
+      get articles by topic
+      get most recent articles 
+      get articles of following users
+      comment on post - auth
+
+
+user
+_id -> username, email, password, name, follow_users(Array)
+
+topic
+_id -> name
+
+article
+_id -> title, content, image_path, user_id, topic_id, deleted
+
+article_comment
+_id -> article_id, content, user_id
