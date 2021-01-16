@@ -20,9 +20,9 @@ const auth = async (req, res, next) => {
     }
 }
 
-const owner = async (req, res, next) => {
-    req.owner = true;
-    next();
-}
+// const owner = async (req, res, next) => {
+//     req.owner = true;
+//     next();
+// }
 
-module.exports = { auth, owner };
+module.exports = { auth };

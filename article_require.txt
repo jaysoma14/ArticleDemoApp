@@ -13,7 +13,7 @@ APIS- register user
       get all articles
       get articles by topic
       get most recent articles 
-      get articles of following users
+      get articles of following users - auth
       comment on post - auth
 
 
