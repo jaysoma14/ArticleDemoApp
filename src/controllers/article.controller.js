@@ -77,12 +77,12 @@ exports.updateById = async (req, res, next) => {
 
     const { id } = req.params;
     if (!isMongoId(id)) {
-        next(new PageNotFoundError(`article not found!`));
+        return next(new PageNotFoundError(`article not found!`));
     }
 
     const article = await ArticleModel.findOne({ _id: id, userId: req.user._id });
     if (!article) {
-        next(new PageNotFoundError(`article not found!`));
+        return next(new PageNotFoundError(`article not found!`));
     }
 
     await validateImageFile("image")(req, res, async (err) => {
