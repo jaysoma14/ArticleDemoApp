@@ -17,6 +17,10 @@ const mongooseToCustomError = (err, req, res, next) => {
         const keys = Object.keys(err.keyValue);
         next(new BadRequestError(`${keys[0]} with '${err.keyValue[keys[0]]}' already found!`))
     }
+    // file size
+    else if(err?.code === 'LIMIT_FILE_SIZE') {
+        next(new BadRequestError('File size is greater than 1MB!'));
+    }
     else next(err);
 }
 

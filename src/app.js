@@ -5,6 +5,7 @@ const app = express();
 require('./db/mongoose');
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", require('./routes'));
 
