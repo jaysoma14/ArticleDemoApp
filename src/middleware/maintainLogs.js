@@ -9,7 +9,8 @@ const maintainLogs = (err, req, res, next) => {
             console.log(err);
         }
         else {
-            fs.writeFile(path.join(__dirname, "../../logs") + "/" + Date.now() + ".txt", err.stack, ()=>{});
+            fs.mkdirSync(path.join(__dirname, "../../logs"), () => { })
+            fs.writeFile(path.join(__dirname, "../../logs") + "/" + Date.now() + ".txt", err.stack, () => { });
         }
     }
     next(err);
